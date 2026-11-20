@@ -5,12 +5,16 @@
 <table>
   <tr>
     <td align="center">
-      <img src="https://github.com/user-attachments/assets/a01bdaf5-4b71-4764-ad5e-78c924e3a2dd" width="300" alt="词卡">
+      <img src="https://github.com/user-attachments/assets/a01bdaf5-4b71-4764-ad5e-78c924e3a2dd" width="225" alt="词卡">
       <br><sub>点划线的词，弹出词卡</sub>
     </td>
     <td align="center">
-      <img src="https://github.com/user-attachments/assets/cc99dc67-45d9-4353-b31a-ec1568b1b595" width="460" alt="单段翻译">
+      <img src="https://github.com/user-attachments/assets/cc99dc67-45d9-4353-b31a-ec1568b1b595" width="345" alt="单段翻译">
       <br><sub>哪段卡住，就只看哪段的中文</sub>
+    </td>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/9b6ee31b-03b1-45af-82e9-60fa42c39269" width="163" alt="导出生词本">
+      <br><sub>收藏的词，一键导出成笔记</sub>
     </td>
   </tr>
 </table>
