@@ -2,8 +2,18 @@
 
 一个给英语学习者用的 Chrome 插件。读英文文章时页面只显示英文，哪段看不懂，点一下就能看那一段的中文。它还能帮你从文章里挑出值得学的词，告诉你哪些该学着用、哪些认识就够了。
 
-<img width="756" height="770" alt="screenshot-card" src="https://github.com/user-attachments/assets/a01bdaf5-4b71-4764-ad5e-78c924e3a2dd" />
-<img width="1510" height="1010" alt="screenshot-translate" src="https://github.com/user-attachments/assets/cc99dc67-45d9-4353-b31a-ec1568b1b595" />
+<table>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/a01bdaf5-4b71-4764-ad5e-78c924e3a2dd" width="300" alt="词卡">
+      <br><sub>点划线的词，弹出词卡</sub>
+    </td>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/cc99dc67-45d9-4353-b31a-ec1568b1b595" width="460" alt="单段翻译">
+      <br><sub>哪段卡住，就只看哪段的中文</sub>
+    </td>
+  </tr>
+</table>
 
 ## 起因：chips 被翻成了薯片
 
