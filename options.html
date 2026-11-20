@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<title>Read &amp; Pick 设置</title>
+<style>
+  body { max-width: 620px; margin: 40px auto; padding: 0 20px; font: 14px -apple-system, "PingFang SC", sans-serif; color: #333; }
+  h1 { font-size: 20px; }
+  label { display: block; margin: 16px 0 4px; font-weight: 600; }
+  input, textarea { width: 100%; padding: 8px 10px; border: 1px solid #ddd; border-radius: 8px; font: inherit; box-sizing: border-box; }
+  textarea { height: 110px; }
+  .hint { color: #999; font-size: 12px; margin-top: 4px; }
+  .presets { display: flex; gap: 8px; margin-top: 6px; }
+  button { padding: 8px 14px; border-radius: 8px; border: 1px solid #f0c2d2; background: #fff; color: #d23f73; cursor: pointer; font: inherit; }
+  button.main { background: #e85a8a; color: #fff; border-color: #e85a8a; }
+  .actions { display: flex; gap: 10px; margin-top: 24px; align-items: center; }
+  #status { color: #888; font-size: 13px; }
+</style>
+</head>
+<body>
+  <h1>Read &amp; Pick 设置</h1>
+
+  <label>接口地址 (Base URL)</label>
+  <input id="baseUrl" placeholder="https://api.deepseek.com">
+  <div class="presets">
+    <button data-preset="deepseek">DeepSeek</button>
+    <button data-preset="openai">OpenAI</button>
+  </div>
+  <div class="hint">任何兼容 OpenAI 格式的接口都行，插件会自动拼上 /chat/completions。OpenAI 要带 /v1。</div>
+
+  <label>API Key</label>
+  <input id="apiKey" type="password" placeholder="sk-...">
+  <div class="hint">只存在本机浏览器里，只会发给上面这个地址。</div>
+
+  <label>模型</label>
+  <input id="model" placeholder="deepseek-chat">
+
+  <label>学习者说明（挑词时会发给模型）</label>
+  <textarea id="profile"></textarea>
+  <div class="hint">建议改成你自己的情况：水平、目标（比如雅思 7）、工作、爱好。模型会照着挑词，例句也会往你的生活里造。用英文写效果更稳。</div>
+
+  <div class="actions">
+    <button class="main" id="save">保存</button>
+    <button id="test">测试连接</button>
+    <span id="status"></span>
+  </div>
+  <script src="options.js"></script>
+</body>
+</html>

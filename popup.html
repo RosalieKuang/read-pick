@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<style>
+  body { width: 300px; margin: 0; padding: 14px; font: 13px -apple-system, "PingFang SC", sans-serif; color: #333; }
+  h1 { font-size: 15px; margin: 0 0 10px; }
+  .btns { display: flex; gap: 6px; margin-bottom: 10px; }
+  button { flex: 1; padding: 7px 0; border-radius: 8px; border: 1px solid #f0c2d2; background: #fff; color: #d23f73; cursor: pointer; font-size: 12.5px; }
+  button.main { background: #e85a8a; color: #fff; border-color: #e85a8a; }
+  #list { max-height: 320px; overflow: auto; border-top: 1px solid #f2f2f2; }
+  .item { display: flex; justify-content: space-between; align-items: center; padding: 6px 2px; border-bottom: 1px solid #f7f7f7; }
+  .item .w { font-weight: 600; }
+  .item .meta { color: #999; font-size: 11px; margin-left: 6px; }
+  .item .del { flex: none; width: 22px; border: none; color: #bbb; background: none; }
+  .empty { color: #aaa; padding: 10px 0; }
+  .tip { color: #999; font-size: 11px; margin-top: 10px; line-height: 1.6; }
+</style>
+</head>
+<body>
+  <h1>Read &amp; Pick 词库</h1>
+  <div class="btns">
+    <button class="main" id="export">导出 .md</button>
+    <button id="clear">清空</button>
+    <button id="settings">设置</button>
+  </div>
+  <div id="list"></div>
+  <div class="tip">页面里：段落左边的“译”看单段中文；右下角“挑词”划词；Option+Shift+A 全文中文开关。</div>
+  <script src="popup.js"></script>
+</body>
+</html>
