@@ -130,14 +130,29 @@
     return hoverBtn;
   }
 
+  let hideTimer = null;
+
+  function hideHoverBtn() {
+    clearTimeout(hideTimer);
+    if (hoverBtn) hoverBtn.style.display = 'none';
+    hoverTarget = null;
+  }
+
+  // small delay so the mouse can travel from the paragraph to the button
+  function scheduleHide() {
+    clearTimeout(hideTimer);
+    hideTimer = setTimeout(hideHoverBtn, 300);
+  }
+
+  // fixed to the viewport, so it can't drift when a page scrolls inside its own container
   function placeHoverBtn(p) {
     const btn = ensureHoverBtn();
     hoverTarget = p;
     const r = p.getBoundingClientRect();
-    let left = r.left + window.scrollX - 30;
-    if (r.left < 34) left = r.right + window.scrollX + 6;
+    let left = r.left - 30;
+    if (left < 4) left = Math.min(r.right + 6, window.innerWidth - 30);
     btn.style.left = left + 'px';
-    btn.style.top = r.top + window.scrollY + 2 + 'px';
+    btn.style.top = Math.max(4, r.top + 2) + 'px';
     btn.style.display = 'block';
   }
 
@@ -145,12 +160,26 @@
     'mouseover',
     (e) => {
       const el = e.target;
-      if (!(el instanceof Element) || el.closest('.rp-ui')) return;
+      if (!(el instanceof Element)) return;
+      if (el.closest('.rp-hover-btn')) {
+        clearTimeout(hideTimer);
+        return;
+      }
+      if (el.closest('.rp-ui')) return;
       const p = el.closest('p');
-      if (p && p !== hoverTarget && qualifies(p)) placeHoverBtn(p);
+      if (p && qualifies(p)) {
+        clearTimeout(hideTimer);
+        placeHoverBtn(p);
+      } else if (hoverTarget) {
+        scheduleHide();
+      }
     },
     { passive: true }
   );
+
+  // any scroll, on the page or inside a scrolling container: hide until the mouse moves again
+  document.addEventListener('scroll', hideHoverBtn, { capture: true, passive: true });
+  window.addEventListener('blur', hideHoverBtn);
 
   // ---------- vocabulary ----------
   function clearHighlights() {
