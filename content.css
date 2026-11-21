@@ -19,7 +19,7 @@
 
 /* hover button */
 .rp-hover-btn {
-  position: absolute;
+  position: fixed;
   display: none;
   z-index: 2147483000;
   width: 24px; height: 24px;

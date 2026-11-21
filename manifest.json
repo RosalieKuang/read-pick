@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Read & Pick 读词助手",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "English-first reading: translate a paragraph only when you need it, and pick words by tier and register.",
   "permissions": ["storage"],
   "host_permissions": ["<all_urls>"],
